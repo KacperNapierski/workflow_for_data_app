@@ -1,2 +1,6 @@
 psycopg==3.3.3
 pandas==3.0.1
+fastapi[standard]==0.115.5
+uvicorn[standard] == 0.32.1
+requests==2.32.3
+sqlmodel==0.0.37
