@@ -1,0 +1,23 @@
+# Use postgres/example user/password credentials
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    # set shared memory limit when using docker compose
+    shm_size: 1g
+    volumes:
+      - postgres:/database/optional_data
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  postgres:
+    external: true
